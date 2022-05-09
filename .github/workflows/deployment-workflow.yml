@@ -1,7 +1,7 @@
 # @Author: Rafael Direito
 # @Date:   09-05-2022 16:55:45
 # @Last Modified by:   Rafael Direito
-# @Last Modified time: 09-05-2022 17:58:12
+# @Last Modified time: 09-05-2022 18:01:23
 
 name: GitHub Actions Deployment Workflow
 on:
@@ -36,6 +36,6 @@ jobs:
     runs-on: self-hosted
     steps:
       - run: | # delete old website files
-          rf -rf /var/www/docusaurus-website/*
+          rm -rf /var/www/docusaurus-website/*
       - run: | # add the new ones
           cp -r ${{ github.workspace }}/project-documentation/build/* /var/www/docusaurus-website/
