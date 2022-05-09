@@ -2,7 +2,7 @@
  * @Author: Rafael Direito
  * @Date:   09-05-2022 16:18:06
  * @Last Modified by:   Rafael Direito
- * @Last Modified time: 09-05-2022 18:22:14
+ * @Last Modified time: 09-05-2022 18:27:30
  */
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
@@ -15,7 +15,7 @@ const config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/docs/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
