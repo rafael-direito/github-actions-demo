@@ -1,7 +1,7 @@
 # @Author: Rafael Direito
 # @Date:   09-05-2022 16:55:45
 # @Last Modified by:   Rafael Direito
-# @Last Modified time: 09-05-2022 18:01:23
+# @Last Modified time: 09-05-2022 18:19:10
 
 name: GitHub Actions Deployment Workflow
 on:
@@ -25,6 +25,7 @@ jobs:
           npm run build
 
   crete_backup:
+    needs: build_website
     runs-on: self-hosted
     steps:
       - run: | # create a zip file with all the files and store it in the backups folder
@@ -33,6 +34,7 @@ jobs:
           find /var/www/docusaurus-website-backups/ -maxdepth 1 -type f -mtime +7 -print | xargs /bin/rm -f
 
   deploy_website:
+    needs: crete_backup
     runs-on: self-hosted
     steps:
       - run: | # delete old website files
