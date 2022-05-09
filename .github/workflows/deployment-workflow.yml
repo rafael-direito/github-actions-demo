@@ -1,7 +1,7 @@
 # @Author: Rafael Direito
 # @Date:   09-05-2022 16:55:45
 # @Last Modified by:   Rafael Direito
-# @Last Modified time: 09-05-2022 17:20:56
+# @Last Modified time: 09-05-2022 17:24:36
 
 name: GitHub Actions Deployment Workflow
 on:
@@ -11,7 +11,7 @@ jobs:
   build_website:
     runs-on: self-hosted
     steps:
-      - run: cd ${{ github.workspace }} # enter the directory we want
+      - run: cd ${{ github.workspace }}/project-documentation # enter the directory we want
       - run: | # deal with the dependencies
           if [ -e yarn.lock ]; then
             yarn install --frozen-lockfile
